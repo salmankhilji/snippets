@@ -98,7 +98,7 @@ abstract class CodeSample {
     if (sourceFile != null && _sourceFileContents == null) {
       // Strip lines until the first non-comment line. This gets rid of the
       // copyright and comment directing the reader to the original source file.
-      final List<String> stripped = <String>[];
+      final List<String> stripped = <String>[ '// ${sourceFile!.path}' ];
       bool doneStrippingHeaders = false;
       try {
         for (final String line in sourceFile!.readAsLinesSync()) {
